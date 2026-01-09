@@ -17,4 +17,4 @@ Ihren Beitrag unter allen drei oben genannten Lizenzen zu verbreiten.
 Sie behalten das Copyright an Ihrem Beitrag und können ihn parallel
 unter beliebigen anderen Lizenzen nutzen oder weitergeben.
 
-DETAILS: Siehe [CONTRIBUTING](CONTRIBUTING.md)
+DETAILS: Siehe [CONTRIBUTING](CONTRIBUTING.de.md)

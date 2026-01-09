@@ -21,5 +21,5 @@ Fügen Sie diesen Header zu jeder neuen Datei hinzu:
 
 ```swift
 // SPDX-License-Identifier: 0BSD
-// Copyright © [JAHR] [IHR NAME] - Beitrag zu [PROJEKTNAME]
+// SPDX-FileCopyrightText: © [YEAR] [YOUR NAME]
 ```

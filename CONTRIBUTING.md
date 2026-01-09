@@ -1,6 +1,6 @@
 <!--
-SPDX License Identifier: EUPL-1.2 OR Apache-2.0 OR 0BSD
-SPDX File Copyright Text: © 2026 Sebastian Ritter
+SPDX-License-Identifier: EUPL-1.2 OR Apache-2.0 OR 0BSD
+SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 -->
 
 #🎯 Contribution Guidelines
@@ -22,6 +22,6 @@ This project is available under **three licenses**:
 Add this header to every new file:
                   
 ```swift
-// SPDX License Identifier: 0BSD
-// Copyright © [YEAR] [YOUR NAME] - Contribution to [PROJECT NAME]
+// SPDX-License-Identifier: 0BSD
+// SPDX-FileCopyrightText: © [YEAR] [YOUR NAME]
 ```
