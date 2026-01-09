@@ -3,18 +3,16 @@ SPDX-License-Identifier: EUPL-1.2 OR Apache-2.0 OR 0BSD
 SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 -->
 
-### **LICENSE-Datei:**
+# LICENSE
 
-DIESES PROJEKT IST UNTER EINER DREIFACHLIZENZ VERFÜGBAR
-EUPL-1.2 OR Apache-2.0 OR 0BSD
+THIS PROJECT IS AVAILABLE UNDER A TRIPLE LICENSE
+EUPL-1.2 **OR** Apache-2.0 **OR** 0BSD
 
-BEITRAGSREGELN:
-Alle Beiträge zu diesem Projekt werden ausschließlich unter der
-0BSD (BSD Zero Clause License) angenommen. Durch das Einreichen
-eines Beitrags gewähren Sie dem Projekt das unwiderrufliche Recht,
-Ihren Beitrag unter allen drei oben genannten Lizenzen zu verbreiten.
+CONTRIBUTION RULES:
 
-Sie behalten das Copyright an Ihrem Beitrag und können ihn parallel
-unter beliebigen anderen Lizenzen nutzen oder weitergeben.
+All contributions to this project are accepted **exclusively** under the
+0BSD (BSD Zero Clause License). By submitting a contribution, you grant the project the irrevocable right to distribute your contribution under all three licenses mentioned above.
 
-DETAILS: Siehe [CONTRIBUTING](CONTRIBUTING.md)
+You retain the copyright to your contribution and may use or distribute it under any other licenses.
+
+DETAILS: See [CONTRIBUTING](CONTRIBUTING.md)

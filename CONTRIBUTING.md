@@ -1,25 +1,27 @@
 <!--
-SPDX-License-Identifier: EUPL-1.2 OR Apache-2.0 OR 0BSD
-SPDX-FileCopyrightText: © 2026 Sebastian Ritter
+SPDX License Identifier: EUPL-1.2 OR Apache-2.0 OR 0BSD
+SPDX File Copyright Text: © 2026 Sebastian Ritter
 -->
-## 🎯 Beitragsrichtlinien
 
-### Lizenzierung
-Dieses Projekt ist unter **drei Lizenzen** verfügbar:
-- EUPL-1.2 OR Apache-2.0 OR 0BSD
+#🎯 Contribution Guidelines
 
-**Alle Beiträge müssen unter der 0BSD Lizenz eingereicht werden.**
+## Licensing
+This project is available under **three licenses**:
+- EUPL-1.2 **OR** Apache-2.0 **OR** 0BSD
 
-### Warum 0BSD?
-0. **International nutzbar:** 0BSD ist äquivalent zu public domain. public domain ist jedoch nicht überall rechtlich möglich.
-1. **Maximale Flexibilität:** Wir können Ihre Beiträge unter allen drei Projektlizenzen weitergeben
-2. **Einfach für Sie:** Sie behalten alle Rechte
-3. **Fair für alle:** Nutzer können zwischen drei Lizenzen wählen
+**All contributions must be submitted under the 0BSD license.**
 
-### Technische Umsetzung
-Fügen Sie diesen Header zu jeder neuen Datei hinzu:
+## Why 0BSD?
 
+0. **International usability:** 0BSD is equivalent to public domain. However, public domain is not legally permissible everywhere.
+1. **Maximum Flexibility:** We can distribute your contributions under all three project licenses.
+2. **Easy for You:** You retain all rights.
+3. **Fair for Everyone:** Users can choose between three licenses.
+                
+## Technical Implementation
+Add this header to every new file:
+                  
 ```swift
-// SPDX-License-Identifier: 0BSD
-// Copyright © [JAHR] [IHR NAME] - Beitrag zu [PROJEKTNAME]
+// SPDX License Identifier: 0BSD
+// Copyright © [YEAR] [YOUR NAME] - Contribution to [PROJECT NAME]
 ```
