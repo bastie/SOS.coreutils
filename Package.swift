@@ -6,9 +6,11 @@ import PackageDescription
 
 let package = Package(
   name: "coreutils",
-  platforms: [.macOS(.v26),.custom("FreeBSD", versionString: "14.3")],
+  defaultLocalization: "de",
+  platforms: [.macOS(.v26)],
   products: [
     .executable(name: "head", targets: ["head"]),
+    .executable(name: "md5", targets: ["md5"]),
     .executable(name: "sleep", targets: ["sleep"]),
     .executable(name: "wc", targets: ["wc"]),
     
@@ -17,6 +19,7 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/bastie/SOS.libutil", from: "0.1.0"), //.package(path: "../SOS.libutil"),
     .package(url: "https://github.com/bastie/SOS.libc", from: "0.1.0"),//.package(path: "../SOS.libc"),
+    .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.7.0"),
   ],
   targets: [
     // MARK: core target as library, so we can test it
@@ -31,8 +34,17 @@ let package = Package(
         .product(name: "c", package: "SOS.libc")
       ]
     ),
+
+    // MARK: md5 target use the slow but nice swift-argument-parser instead of self implementing
+      .executableTarget(
+        name: "md5",
+        dependencies: [
+          "core",
+          .product(name: "ArgumentParser", package: "swift-argument-parser"),
+        ]
+      ),
     
-    // MARK: wc target use some provided library function of libc
+    // MARK: sleep target use some provided library function of libc
     .executableTarget(
       name: "sleep" ,
       dependencies: [
