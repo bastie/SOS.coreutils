@@ -15,7 +15,7 @@ What is the target of this project? Many reimplementations have different target
   * OpenBSD scope
     * NetBSD scope
       * FreeBSD scope
-        * macOS scope
+        * macOS scope (Apple Silicon)
           * GNU extensions
 * base for SOS
 
