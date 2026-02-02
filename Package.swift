@@ -68,7 +68,7 @@ let package = Package(
       name: "wc" ,
       dependencies: [
         "core",
-        .product(name: "c", package: "SOS.libc")
+        .product(name: "ArgumentParser", package: "swift-argument-parser"),
       ]
     ),
     

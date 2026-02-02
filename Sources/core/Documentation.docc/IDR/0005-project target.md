@@ -12,12 +12,13 @@ What is the target of this project? Many reimplementations have different target
 * A reimplementation of POSIX tools to be an replacement of BSD core tools.
 * BSD implementation beats GNU implementation
 * Feature scope
-  * OpenBSD scope
-    * NetBSD scope
-      * FreeBSD scope
-        * macOS scope (Apple Silicon)
-          * GNU extensions
-* base for SOS
+  * Existing core implementation 🥉
+    * OpenBSD scope 
+      * NetBSD scope 🥈
+        * FreeBSD scope 🥇
+          * macOS scope (Apple Silicon) 
+            * GNU extensions
+* Base for SOS.
 
 ## Consequences
 
