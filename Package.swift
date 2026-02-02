@@ -13,7 +13,8 @@ let package = Package(
     .executable(name: "md5", targets: ["md5"]),
     .executable(name: "sleep", targets: ["sleep"]),
     .executable(name: "wc", targets: ["wc"]),
-    
+    .executable(name: "yes", targets: ["yes"]),
+
     .executable(name: "garoto", targets: ["garoto"]),
   ],
   dependencies: [
@@ -62,6 +63,15 @@ let package = Package(
       ]
     ),
     
+    // MARK: yes
+    .executableTarget(
+      name: "yes",
+      dependencies: [
+        "core",
+        .product(name: "ArgumentParser", package: "swift-argument-parser"),
+      ]
+    ),
+
     // MARK: ☕️
     .executableTarget(name: "garoto" , dependencies: ["core"]),
   

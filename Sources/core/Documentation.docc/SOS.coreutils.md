@@ -10,12 +10,16 @@ SOS coreutils
 
 ## Tools
 
+Tools are developed in the separate folders, **but** the business logic must be implemented in the core. This separation allows testing and reusing.
+
 ### Status
 
 
 | 🫣 | ⚙️                        | 📝                                        |
 |----|-------------------|---------------------------------------------------|
-| 😎 | md5               | not md5sum; bad implemation for later adons       |
+| 🥴 | md5               | not md5sum; bad implemation for later addons      |
 | 🥴 | sleep             | only one numeric arguments without unit           |
+| 😎 | yes               |                                                   |
 
 
+---

@@ -15,7 +15,7 @@ struct md5 : AsyncParsableCommand {
       discussion:
       """
       """,
-      version: "1.0.0"
+      version: "0.9.0" // missing -c
     )
   }
   
