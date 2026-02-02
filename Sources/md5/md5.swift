@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: EUPL-1.2 OR Apache-2.0 OR 0BSD
+// SPDX-License-Identifier: 0BSD OR Apache-2.0 OR EUPL-1.2
 // SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 
 import core
@@ -22,7 +22,7 @@ struct md5 : AsyncParsableCommand {
   @Flag(name: [.short, .long], help: "Echo stdin to stdout and append the checksum to stdout. In this mode, any files specified onthe command line are silently ignored.")
   var passthrough = false
   
-  @Flag(name: .short, help: "Quiet mode - only the checksum is printed. Overrides the -r or --reverse option.")
+  @Flag(name: [.short, .long], help: "Quiet mode - only the checksum is printed. Overrides the -r or --reverse option.")
   var quiet = false
   
   @Flag(name: [.short, .customLong("reverse")], help: "Reverses the format of the output. This helps with visual diffs. Does nothing when combined with the -ptx options.")
@@ -34,8 +34,11 @@ struct md5 : AsyncParsableCommand {
   )
   var string: String?
   
-  @Flag(name: [.customShort("x")], help: "Run a built-in test script.")
+  @Flag(name: [.customShort("x"), .customLong("self-test")], help: "Run a built-in test script.")
   var runBuiltInTest = false
+  
+  @Flag(name: [.customShort("t"), .customLong("time-trial")], help: "Run a built-in benchmark.")
+  var runBuiltInBenchmark = false
   
   @Argument(help: "Files to hash.")
   var files: [String] = []
@@ -48,6 +51,34 @@ struct md5 : AsyncParsableCommand {
     // TODO: GNU - md5sum not supported yet - take a look to uutils if you need GNU reimplemention now
     guard md5.bsd else {
       Foundation.exit(255)
+    }
+    
+    // benchmark
+    if runBuiltInBenchmark {
+      print ("MD5 time trial. Digesting 100000 10000-byte blocks ... ", terminator: "")
+      let md5 = MD5()
+      var digest : String = ""
+      let clock = ContinuousClock()
+      let randomBytes = Data((0..<10_000).map { _ in UInt8.random(in: 0...255) })
+
+      let duration = clock.measure {
+        for _ in 0..<100_000 {
+          md5.update(with: randomBytes)
+        }
+        digest = md5.finalize()
+      }
+      let totalBytes = Double(100_000 * 10_000)
+      let totalSeconds = Double(duration.components.seconds) + (Double(duration.components.attoseconds) / 1e18)
+      let mibPerSecond = totalBytes / totalSeconds / (1024 * 1024)
+      let time = String(format: "%.6f",totalSeconds)
+      let speed = String(format: "%6f", mibPerSecond)
+
+      print ("""
+        done
+        Digist = \(digest)
+        Time = \(time) seconds
+        Speed = \(speed) MiB/second
+        """)
     }
 
     // Testsuite is
@@ -122,7 +153,9 @@ struct md5 : AsyncParsableCommand {
       switch (quiet, reverse, isString) {
       case (true, _, _): // quiet
         print(hash)
-      case (_,true, true):
+      case (_, _, true): // -s
+        print (hash)
+      case (_,true, _):
         if string == nil {
           print (hash)
         }
