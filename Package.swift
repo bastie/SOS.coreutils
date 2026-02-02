@@ -12,6 +12,7 @@ let package = Package(
     .executable(name: "head", targets: ["head"]),
     .executable(name: "md5", targets: ["md5"]),
     .executable(name: "sleep", targets: ["sleep"]),
+    .executable(name: "true", targets: ["true"]),
     .executable(name: "wc", targets: ["wc"]),
     .executable(name: "yes", targets: ["yes"]),
 
@@ -54,6 +55,14 @@ let package = Package(
       ]
     ),
 
+    // MARK: wc target use some provided library function of libc
+    .executableTarget(
+      name: "true" ,
+      dependencies: [
+        "core",
+      ]
+    ),
+    
     // MARK: wc target use some provided library function of libc
     .executableTarget(
       name: "wc" ,

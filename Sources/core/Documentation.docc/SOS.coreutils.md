@@ -17,6 +17,7 @@ Tools are developed in the separate folders, **but** the business logic must be 
 
 | 🫣 | ⚙️                        | 📝                                        |
 |----|-------------------|---------------------------------------------------|
+| 😎 | false             |                                                   |
 | 🥴 | md5               | not md5sum; bad implemation for later addons      |
 | 🥴 | sleep             | only one numeric arguments without unit           |
 | 😎 | true              |                                                   |

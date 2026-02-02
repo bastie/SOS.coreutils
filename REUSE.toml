@@ -21,23 +21,16 @@ SPDX-FileCopyrightText = "© 2026 Sebastian Ritter"
 SPDX-License-Identifier = "0BSD OR Apache-2.0 OR EUPL-1.2"
 
 [[annotations]]
-path = "Sources/core/Documentation.docc/Resources/logo.png"
+path = "Sources/core/Documentation.docc/**"
 precedence = "closest"
 SPDX-FileCopyrightText = "© 2026 Sebastian Ritter"
 SPDX-License-Identifier = "0BSD OR Apache-2.0 OR EUPL-1.2"
 
 [[annotations]]
-path = "Sources/core/Documentation.docc/logo.png"
+path = "Sources/**/Documentation.docc/**"
 precedence = "closest"
 SPDX-FileCopyrightText = "© 2026 Sebastian Ritter"
 SPDX-License-Identifier = "0BSD OR Apache-2.0 OR EUPL-1.2"
-
-[[annotations]]
-path = "Sources/core/Documentation.docc/SOS.coreutils.md"
-precedence = "closest"
-SPDX-FileCopyrightText = "© 2026 Sebastian Ritter"
-SPDX-License-Identifier = "0BSD OR Apache-2.0 OR EUPL-1.2"
-
 
 [[annotations]]
 path = "Package.resolved"
