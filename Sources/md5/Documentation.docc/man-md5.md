@@ -48,9 +48,10 @@ To benchmark the performance of the MD5 algorithm on your machine:
 
 ```bash
 $ md5 -t
-MD5 time trial. Digesting 100000000 128-byte blocks ... done
-Time = 1.234567 seconds
-Speed = 10368007532.00 bytes/second
+MD5 time trial. Digesting 100000 10000-byte blocks ... done
+Digist = 26479e5881616c5b1d6357df43f2d93d
+Time   = 5.749699 seconds
+Speed  = 165.865092 MiB/second
 ```
 
 ## **SEE ALSO**

@@ -76,8 +76,8 @@ struct md5 : AsyncParsableCommand {
       print ("""
         done
         Digist = \(digest)
-        Time = \(time) seconds
-        Speed = \(speed) MiB/second
+        Time   = \(time) seconds
+        Speed  = \(speed) MiB/second
         """)
     }
 
