@@ -15,6 +15,7 @@ let package = Package(
     .executable(name: "true", targets: ["true"]),
     .executable(name: "wc", targets: ["wc"]),
     .executable(name: "which", targets: ["which"]),
+    .executable(name: "who", targets: ["who"]),
     .executable(name: "whoami", targets: ["whoami"]),
     .executable(name: "yes", targets: ["yes"]),
 
@@ -86,6 +87,14 @@ let package = Package(
     // MARK: whoami
     .executableTarget(
       name: "whoami",
+      dependencies: [
+        "core",
+      ]
+    ),
+    
+    // MARK: whoami
+    .executableTarget(
+      name: "who",
       dependencies: [
         "core",
       ]

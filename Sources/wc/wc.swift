@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: EUPL-1.2 OR Apache-2.0 OR 0BSD
+// SPDX-License-Identifier: 0BSD OR Apache-2.0 OR EUPL-1.2
 // SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 
 import core
@@ -50,8 +50,8 @@ struct wc : AsyncParsableCommand {
 
   }
   
-  func processPerFile (files : [String]) -> [WCResult] {
-    var result : [WCResult] = []
+  func processPerFile (files : [String]) -> [_WCResult] {
+    var result : [_WCResult] = []
     for file in files {
       result.append(try! _wc().processFile(at: file))
     }
@@ -61,7 +61,7 @@ struct wc : AsyncParsableCommand {
   
   /// Print results
   /// - Note: FreeBSD man page describe that only last flag of `m` and `c` wins. NetBSD do it also (today without note in manpage - send an issue). But OpenBSD do it like GNU coreutils and also allows both. This implementation accept both Flags and print the results for both.
-  func printResult (results : [WCResult]) {
+  func printResult (results : [_WCResult]) {
     // build dynamic the string format
     
     // how much results expected?

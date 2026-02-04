@@ -24,7 +24,8 @@ Tools are developed in the separate folders, **but** the business logic must be 
 | 🥇 | 😎 | true              |                                              |
 | 🥉 | 🥴 | wc                |                                              |
 | 🥇 | 😎 | which             |                                              |
-| 🥇 | 😎 | whoami            |                                              |
+| 🥉 | 🥴 | who               | only without parameters                      |
+| 🥇 | 😎 | whoami            | use id                                       |
 | 🥇 | 😎 | yes               |                                              |
 
 

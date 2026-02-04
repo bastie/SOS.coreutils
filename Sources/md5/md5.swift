@@ -56,7 +56,7 @@ struct md5 : AsyncParsableCommand {
     // benchmark
     if runBuiltInBenchmark {
       print ("MD5 time trial. Digesting 100000 10000-byte blocks ... ", terminator: "")
-      let md5 = MD5()
+      let md5 = _MD5()
       var digest : String = ""
       let clock = ContinuousClock()
       let randomBytes = Data((0..<10_000).map { _ in UInt8.random(in: 0...255) })
@@ -87,7 +87,7 @@ struct md5 : AsyncParsableCommand {
       Foundation.exit(0)
     }
     if passthrough {
-      let hasher = MD5()
+      let hasher = _MD5()
       let stdin = FileHandle.standardInput
       let stdout = FileHandle.standardOutput
       
@@ -108,7 +108,7 @@ struct md5 : AsyncParsableCommand {
     }
 
     if let string {
-      let hasher = MD5()
+      let hasher = _MD5()
       if let data = string.data(using: .utf8) {
         hasher.update(with: data)
       }
@@ -123,7 +123,7 @@ struct md5 : AsyncParsableCommand {
           let handle = try FileHandle(forReadingFrom: fileURL)
           
           // 1. Hasher instanziieren
-          let hasher = MD5()
+          let hasher = _MD5()
           
           // 2. Blockweise lesen (z.B. 64 KB pro Durchgang)
           while let chunk = try handle.read(upToCount: 65536), !chunk.isEmpty {
@@ -194,7 +194,7 @@ struct md5 : AsyncParsableCommand {
     print ("MD5 test suite:")
     // speed is not important
     for test in testcases {
-      let hasher = MD5()
+      let hasher = _MD5()
       if let data = test.content.data(using: .utf8) {
         hasher.update(with: data)
       }
