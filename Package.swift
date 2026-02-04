@@ -14,6 +14,7 @@ let package = Package(
     .executable(name: "sleep", targets: ["sleep"]),
     .executable(name: "true", targets: ["true"]),
     .executable(name: "wc", targets: ["wc"]),
+    .executable(name: "which", targets: ["which"]),
     .executable(name: "yes", targets: ["yes"]),
 
     .executable(name: "garoto", targets: ["garoto"]),
@@ -66,6 +67,15 @@ let package = Package(
     // MARK: wc target use some provided library function of libc
     .executableTarget(
       name: "wc" ,
+      dependencies: [
+        "core",
+        .product(name: "ArgumentParser", package: "swift-argument-parser"),
+      ]
+    ),
+    
+    // MARK: which
+    .executableTarget(
+      name: "which",
       dependencies: [
         "core",
         .product(name: "ArgumentParser", package: "swift-argument-parser"),

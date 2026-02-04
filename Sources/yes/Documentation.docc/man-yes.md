@@ -22,8 +22,7 @@ n
 …
 ```
 
-## **SEE ALSO**
-
+## **NOTE**
 
 > Important: Unlike of other implementations, `CTRL + C` works, but slows down the output.
 

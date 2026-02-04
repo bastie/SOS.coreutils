@@ -1,0 +1,37 @@
+# ``which``
+
+Print the path of the program.
+
+## **SYNOPSIS**
+
+    which [-as] [program]
+
+## **DESCRIPTION**
+
+The **which** utility prints the path of the executable programs.
+
+These options are available:
+
+-a      List all instances of program found, instead of the default (first)
+
+-s      Quiet mode, returns 0 if all of the programs are found, or non-zero if one ore more not found.
+## **EXIT STATUS**
+Returns zero if program found
+
+## **EXAMPLES**
+
+```bash
+$ which ls
+/bin/ls
+…
+```
+
+## **NOTE**
+
+> Important: Unlike of default implementations, shell buildin function can implemented different.
+
+## **AUTHORS**
+
+**Implementation:** Sebastian Ritter 
+
+**Documentation:** Sebastian Ritter
