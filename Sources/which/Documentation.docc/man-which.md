@@ -15,8 +15,10 @@ These options are available:
 -a      List all instances of program found, instead of the default (first)
 
 -s      Quiet mode, returns 0 if all of the programs are found, or non-zero if one ore more not found.
+
 ## **EXIT STATUS**
-Returns zero if program found
+
+Returns 0 if all programs are found and executable, returns 2 if no programs are found or executable and returns 1 if some programs are found and executable but not all.
 
 ## **EXAMPLES**
 

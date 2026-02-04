@@ -35,31 +35,43 @@ public struct yes : AsyncParsableCommand {
   
   public func run() async throws {
     let check = _which.locate(lookingFor: program, stopAtFirst: !all)
+    var results : (success : Int, sucks : Int) = (0,0)
+
     switch (check, quiet) {
     case (nil, _) :
-      // only error so rc is non zero
-      Foundation.exit (EXIT_FAILURE)
+      // only error so rc is OpenBSD like 2
+      Foundation.exit (2)
     case (_, true) :
-      // if one error rc is non zero
+      var results : (success : Int, sucks : Int) = (0,0)
       for next in check! {
-        if !next.ok {
-          Foundation.exit (EXIT_FAILURE)
+        if next.ok {
+          results.success += 1
+        }
+        else {
+          results.sucks += 1
         }
       }
-      // all ok rc is zero
-      Foundation.exit(EXIT_SUCCESS)
     default:
-      var rc = EXIT_SUCCESS
       for next in check! {
         if next.ok {
           print (next.path)
+          results.success += 1
         }
         else {
-          rc = EXIT_FAILURE
+          results.sucks += 1
         }
       }
-      Foundation.exit (rc)
     }
+    // OpenBSD like return codes
+    switch results {
+    case (0, _) :
+      Foundation.exit (2) // only errors
+    case (_,0) :
+      Foundation.exit (0) // no errors
+    default :
+      Foundation.exit (1) // some errors
+    }
+
   }
 }
 
