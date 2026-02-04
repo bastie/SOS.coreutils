@@ -15,6 +15,7 @@ let package = Package(
     .executable(name: "true", targets: ["true"]),
     .executable(name: "wc", targets: ["wc"]),
     .executable(name: "which", targets: ["which"]),
+    .executable(name: "whoami", targets: ["whoami"]),
     .executable(name: "yes", targets: ["yes"]),
 
     .executable(name: "garoto", targets: ["garoto"]),
@@ -79,6 +80,14 @@ let package = Package(
       dependencies: [
         "core",
         .product(name: "ArgumentParser", package: "swift-argument-parser"),
+      ]
+    ),
+    
+    // MARK: whoami
+    .executableTarget(
+      name: "whoami",
+      dependencies: [
+        "core",
       ]
     ),
     

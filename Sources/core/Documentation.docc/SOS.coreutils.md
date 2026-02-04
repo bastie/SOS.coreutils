@@ -18,11 +18,13 @@ Tools are developed in the separate folders, **but** the business logic must be 
 | 🏆 | 🫣 | ⚙️                        | 📝                                    |
 |----|----|-------------------|----------------------------------------------|
 | 🥇 | 😎 | false             |                                              |
+|    | 🤫 | id                | only intern                                  |
 | 🥉 | 🥴 | md5               | not md5sum; bad implemation for later addons |
 | 🥈 | 🥴 | sleep             | only one numeric arguments without unit      |
 | 🥇 | 😎 | true              |                                              |
 | 🥉 | 🥴 | wc                |                                              |
 | 🥇 | 😎 | which             |                                              |
+| 🥇 | 😎 | whoami            |                                              |
 | 🥇 | 😎 | yes               |                                              |
 
 
