@@ -1,6 +1,6 @@
 # IDR#0005 Project target
 
-2026-02-01
+2026-02-04 (update)
 
 ## Context and Problem Statement
 What is the target of this project? Many reimplementations have different targets. 
@@ -18,7 +18,7 @@ What is the target of this project? Many reimplementations have different target
         * FreeBSD scope 🥇
           * macOS scope (Apple Silicon) 
             * GNU extensions
-* Base for SOS.
+* Base for SOS, so more utils than Rust uutil and GNU coreutils are implemented.
 
 ## Consequences
 
