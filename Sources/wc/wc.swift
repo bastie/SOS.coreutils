@@ -45,12 +45,12 @@ struct wc : AsyncParsableCommand {
       Foundation.exit(1)
     }
 
-    let results = processPerFile(files: file)
+    let results = await processPerFile(files: file)
     printResult(results: results)
 
   }
   
-  func processPerFile (files : [String]) -> [_WCResult] {
+  func processPerFile (files : [String]) async -> [_WCResult] {
     var result : [_WCResult] = []
 
     var bytes = self.bytes
@@ -69,8 +69,7 @@ struct wc : AsyncParsableCommand {
                                 maxlinelength:longestLine,
                                 characters:characters,
                                 filename:file)
-      debugPrint(param)
-      result.append(try! _wc().processFile(with: param))
+      await result.append(try! _wc().processFile(with: param))
     }
     
     return result

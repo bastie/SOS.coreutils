@@ -53,9 +53,9 @@ cat odyssey64.txt odyssey64.txt odyssey64.txt odyssey64.txt > odyssey256.txt
 echo "--- run benchmark now ---"
 echo ${TIMESTAMP}
 
-hyperfine --warmup 3 --runs 5 "/usr/bin/wc -l moby64.txt" "/opt/homebrew/bin/gwc -l moby64.txt" "./uutils/target/release/wc -l moby64.txt" "../../../.build/release/wc -l moby64.txt" --export-markdown result_moby64_${TIMESTAMP}.md
-hyperfine --warmup 3 --runs 5 "/usr/bin/wc -l odyssey256.txt" "/opt/homebrew/bin/gwc -l odyssey256.txt" "./uutils/target/release/wc -l odyssey256.txt" "../../../.build/release/wc -l odyssey256.txt" --export-markdown result_odyssey256_${TIMESTAMP}.md
-hyperfine --warmup 3 --runs 5 "/usr/bin/wc -l 25Mshortlines.txt" "/opt/homebrew/bin/gwc -l 25Mshortlines.txt" "./uutils/target/release/wc -l 25Mshortlines.txt" "../../../.build/release/wc -l 25Mshortlines.txt" --export-markdown result_25Mshortlines_${TIMESTAMP}.md
+hyperfine --warmup 5 --runs 10 "/usr/bin/wc -l moby64.txt" "/opt/homebrew/bin/gwc -l moby64.txt" "./uutils/target/release/wc -l moby64.txt" "../../../.build/release/wc -l moby64.txt" --export-markdown result_moby64_${TIMESTAMP}.md
+hyperfine --warmup 5 --runs 10 "/usr/bin/wc -l odyssey256.txt" "/opt/homebrew/bin/gwc -l odyssey256.txt" "./uutils/target/release/wc -l odyssey256.txt" "../../../.build/release/wc -l odyssey256.txt" --export-markdown result_odyssey256_${TIMESTAMP}.md
+hyperfine --warmup 5 --runs 10 "/usr/bin/wc -l 25Mshortlines.txt" "/opt/homebrew/bin/gwc -l 25Mshortlines.txt" "./uutils/target/release/wc -l 25Mshortlines.txt" "../../../.build/release/wc -l 25Mshortlines.txt" --export-markdown result_25Mshortlines_${TIMESTAMP}.md
 
 echo "### wc -l" >results_${TIMESTAMP}.md
 uname -mor >results_${TIMESTAMP}.md

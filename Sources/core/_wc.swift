@@ -6,17 +6,17 @@ import Foundation
 public struct _wc {
   public init(){}
   
-  public func processFile(with params : _WCParameter) throws(_WCError) -> _WCResult {
+  public func processFile(with params : _WCParameter) async throws(_WCError) -> _WCResult {
     guard FileManager.default.fileExists(atPath: params.filename) else {
       throw .fileNotFound(params.filename)
     }
     
-    let result = try analyzeFile(params: params)
+    let result = try await analyzeFile(params: params)
     
     return result
   }
   
-  func analyzeFile(params : _WCParameter) throws(_WCError) -> _WCResult {
+  func analyzeFile(params : _WCParameter) async throws(_WCError) -> _WCResult {
 
     var data : Data?
     var result = _WCResult()
@@ -37,24 +37,28 @@ public struct _wc {
       }
       // Naive Characterzählung
       let chars = content.count
-      
+      result.characters = chars
     }
     var lines : [String]?
     if params.lines {
+      #if canImport(Darwin)
+      result.lines = await lineCount(for: params.filename)
+      #else // platform neutral implementation in Swift
       if nil == data {
         data = loadFile(path: params.filename)
       }
       if nil == content {
         content = String(data: data!, encoding: .utf8)
-        guard let content  else {
+        guard nil != content else {
           throw .unreadableEncoding(params.filename)
         }
       }
-      // Naive Zeilenzählung über Zerlegung nach Zeilenumbrüche (U+000A ~ U+000D, U+0085, U+2028, and U+2029).
-      lines = content!.components(separatedBy: .newlines)
+      // Naive Zeilenzählung über Zerlegung nach Zeilenumbrüche U+000A.
+      lines = content!.components(separatedBy: CharacterSet(["\n"]))
       let lineCount = lines!.count - 1
       
       result.lines = lineCount
+      #endif
     }
     if params.maxlinelength {
       if nil == data {
@@ -62,7 +66,7 @@ public struct _wc {
       }
       if nil == content {
         content = String(data: data!, encoding: .utf8)
-        guard let content  else {
+        guard nil != content else {
           throw .unreadableEncoding(params.filename)
         }
       }
@@ -85,7 +89,7 @@ public struct _wc {
       }
       if nil == content {
         content = String(data: data!, encoding: .utf8)
-        guard let content  else {
+        guard nil != content else {
           throw .unreadableEncoding(params.filename)
         }
       }
