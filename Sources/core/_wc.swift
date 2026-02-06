@@ -2,6 +2,9 @@
 // SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 
 import Foundation
+#if canImport(Darwin)
+import Darwin
+#endif
 
 public struct _wc {
   public init(){}
@@ -22,8 +25,25 @@ public struct _wc {
     var result = _WCResult()
     
     if params.bytes {
+      #if canImport(Darwin)
+      // do NOT read Data from file
+      let fd = open(params.filename, O_RDONLY)
+      guard fd >= 0 else {
+        throw .fileNotFound("Could not open file.")
+      }
+      defer { close(fd) }
+      
+      // Dateigröße ermitteln
+      var stat = stat()
+      guard fstat(fd, &stat) == 0 else {
+        throw .fileNotFound("Could not stat file.")
+      }
+      let fileSize = Int(stat.st_size)
+      #else
+      // read full file and count bytes
       data = loadFile(path: params.filename)
       result.bytes = data!.count
+      #endif
     }
     
     var content : String?

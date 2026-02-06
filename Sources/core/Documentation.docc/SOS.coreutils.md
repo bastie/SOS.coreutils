@@ -22,7 +22,7 @@ Tools are developed in the separate folders, **but** the business logic must be 
 | 🥉 | 🥴 | md5               | not md5sum; bad implemation for later addons |
 | 🥈 | 🥴 | sleep             | only one numeric arguments without unit      |
 | 🥇 | 😎 | true              |                                              |
-| 🥉 | 🥴 | wc                |                                              |
+| 🥈 | 😎 | wc                |                                              |
 | 🥇 | 😎 | which             |                                              |
 | 🥉 | 🥴 | who               | only without parameters                      |
 | 🥇 | 😎 | whoami            | use id                                       |
