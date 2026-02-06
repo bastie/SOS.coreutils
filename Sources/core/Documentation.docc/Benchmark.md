@@ -5,7 +5,7 @@
 
 ### wc -l
 
-Benchmark based on another naive implementation on 2026-02-06. Short line files are an problem, but with real file this not full optimized implementation is faster than GNU and FreeBSD / macOS.
+Benchmark based on a not so naive implementation on 2026-02-06. Short line files are a problem, but with real life file this not full optimized implementation is faster than GNU and FreeBSD / macOS.
 
 **System:** Darwin 25.2.0 arm64
 
