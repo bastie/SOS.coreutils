@@ -6,4 +6,6 @@
 .build
 .swiftpm
 
+
+Tests/wcTests/benchmark
 #EOF

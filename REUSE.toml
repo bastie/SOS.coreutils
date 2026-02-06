@@ -11,6 +11,7 @@ path = [
     "**/*.xcscmblueprint/**",
     "**/*.xccheckout/**",
     ".DS_Store",
+    "Tests/wcTests/benchmark/**",
 ]
 ignore = true
 
