@@ -59,7 +59,7 @@ hyperfine --warmup 3 --runs 5 "/usr/bin/wc -l 25Mshortlines.txt" "/opt/homebrew/
 
 echo "### wc -l" >results_${TIMESTAMP}.md
 uname -mor >results_${TIMESTAMP}.md
-echo " " >results_${TIMESTAMP}.md
+echo " " >>results_${TIMESTAMP}.md
 swift --version >>results_${TIMESTAMP}.md
 cat result_moby64_${TIMESTAMP}.md result_odyssey256_${TIMESTAMP}.md result_25Mshortlines_${TIMESTAMP}.md >>results_${TIMESTAMP}.md
 

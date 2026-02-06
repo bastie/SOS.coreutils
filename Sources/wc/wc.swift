@@ -52,8 +52,25 @@ struct wc : AsyncParsableCommand {
   
   func processPerFile (files : [String]) -> [_WCResult] {
     var result : [_WCResult] = []
+
+    var bytes = self.bytes
+    var lines = self.lines
+    var words = self.words
+    if !(words || lines || bytes || longestLine || characters) {
+      bytes = true
+      lines = true
+      words = true
+    }
+    
     for file in files {
-      result.append(try! _wc().processFile(at: file))
+      let param = _WCParameter (lines:lines,
+                                words:words,
+                                bytes:bytes,
+                                maxlinelength:longestLine,
+                                characters:characters,
+                                filename:file)
+      debugPrint(param)
+      result.append(try! _wc().processFile(with: param))
     }
     
     return result
@@ -98,7 +115,7 @@ struct wc : AsyncParsableCommand {
         if lines { expected.append(pad("\(result.lines)")) }
         if words { expected.append(pad("\(result.words)")) }
         if bytes { expected.append(pad("\(result.bytes)")) }
-        if characters { expected.append(pad("\(result.charachters)")) }
+        if characters { expected.append(pad("\(result.characters)")) }
         if longestLine { expected.append(pad("\(result.maxlinelength)")) }
         if 0 == expected.count {
           expected.append(pad("\(result.lines)"))
@@ -123,7 +140,7 @@ struct wc : AsyncParsableCommand {
       for result in results {
         totalLines += result.lines
         totalWords += result.words
-        totalCharacters += result.charachters
+        totalCharacters += result.characters
         totalBytes += result.bytes
         if maxLengthOfLine < result.maxlinelength {
           maxLengthOfLine = result.maxlinelength

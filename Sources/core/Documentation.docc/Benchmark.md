@@ -5,7 +5,7 @@
 
 ### wc -l
 
-Benchmark based on **naive implementation on 2026-02-05**. Rust implementation is more than 700 times faster; this was expected.
+Benchmark based on another naive implementation on 2026-02-06. Rust implementation is upto 250 times faster; this was expected. Now `wc -l` doesnt do thinks - like String creating.
 
 **System:** Darwin 25.2.0 arm64
 
@@ -15,17 +15,19 @@ Build config: +assertions
 
 | Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
 |:---|---:|---:|---:|---:|
-| `/usr/bin/wc -l moby64.txt` | 80.4 ± 1.3 | 78.2 | 81.3 | 10.29 ± 0.51 |
-| `/opt/homebrew/bin/gwc -l moby64.txt` | 25.4 ± 0.3 | 25.0 | 25.7 | 3.25 ± 0.16 |
-| `./uutils/target/release/wc -l moby64.txt` | 7.8 ± 0.4 | 7.4 | 8.3 | 1.00 |
-| `../../../.build/release/wc -l moby64.txt` | 6684.5 ± 47.4 | 6640.7 | 6749.8 | **855.51** ± 40.81 |
-|---|---|---|---|---|
-| `/usr/bin/wc -l odyssey256.txt` | 71.7 ± 1.0 | 70.9 | 73.3 | 9.79 ± 0.32 |
-| `/opt/homebrew/bin/gwc -l odyssey256.txt` | 20.9 ± 0.3 | 20.7 | 21.3 | 2.86 ± 0.09 |
-| `./uutils/target/release/wc -l odyssey256.txt` | 7.3 ± 0.2 | 7.2 | 7.7 | 1.00 |
-| `../../../.build/release/wc -l odyssey256.txt` | 6115.3 ± 37.4 | 6069.6 | 6169.4 | **834.99** ± 25.52 |
-|---|---|---|---|---|
-| `/usr/bin/wc -l 25Mshortlines.txt` | 48.3 ± 0.8 | 47.6 | 49.3 | 8.71 ± 0.50 |
-| `/opt/homebrew/bin/gwc -l 25Mshortlines.txt` | 20.1 ± 0.4 | 19.8 | 20.6 | 3.63 ± 0.21 |
-| `./uutils/target/release/wc -l 25Mshortlines.txt` | 5.5 ± 0.3 | 5.2 | 6.0 | 1.00 |
-| `../../../.build/release/wc -l 25Mshortlines.txt` | 4246.7 ± 22.1 | 4225.6 | 4282.3 | **765.95** ± 42.03 |
+| `/usr/bin/wc -l moby64.txt` | 80.6 ± 0.2 | 80.5 | 80.9 | 7.92 ± 1.14 |
+| `/opt/homebrew/bin/gwc -l moby64.txt` | 25.8 ± 1.0 | 25.0 | 27.4 | 2.54 ± 0.38 |
+| `./uutils/target/release/wc -l moby64.txt` | 10.2 ± 1.5 | 8.3 | 11.6 | 1.00 |
+| `../../../.build/release/wc -l moby64.txt` | 1055.9 ± 5.5 | 1051.3 | 1065.3 | **103.77** ± 14.97 |
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `/usr/bin/wc -l odyssey256.txt` | 72.1 ± 0.1 | 71.9 | 72.2 | 8.62 ± 0.40 |
+| `/opt/homebrew/bin/gwc -l odyssey256.txt` | 21.3 ± 0.4 | 20.7 | 21.7 | 2.55 ± 0.12 |
+| `./uutils/target/release/wc -l odyssey256.txt` | 8.4 ± 0.4 | 8.0 | 8.8 | 1.00 |
+| `../../../.build/release/wc -l odyssey256.txt` | 777.0 ± 2.0 | 775.0 | 779.9 | **92.99** ± 4.28 |
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `/usr/bin/wc -l 25Mshortlines.txt` | 51.1 ± 0.1 | 51.0 | 51.3 | 8.85 ± 0.49 |
+| `/opt/homebrew/bin/gwc -l 25Mshortlines.txt` | 20.4 ± 0.7 | 19.5 | 21.2 | 3.53 ± 0.23 |
+| `./uutils/target/release/wc -l 25Mshortlines.txt` | 5.8 ± 0.3 | 5.4 | 6.3 | 1.00 |
+| `../../../.build/release/wc -l 25Mshortlines.txt` | 1346.5 ± 8.8 | 1338.9 | 1359.6 | **233.25** ± 12.95 |
