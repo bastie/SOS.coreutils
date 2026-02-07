@@ -9,6 +9,7 @@ let package = Package(
   defaultLocalization: "de",
   platforms: [.macOS(.v26)],
   products: [
+    .executable(name: "[", targets: ["["]),
     .executable(name: "head", targets: ["head"]),
     .executable(name: "md5", targets: ["md5"]),
     .executable(name: "sleep", targets: ["sleep"]),
@@ -29,7 +30,16 @@ let package = Package(
     // MARK: core target as library, so we can test it
     .target(name: "core"),
     
-    // MARK: head target use some provided library functions of libc and libutil
+    // MARK: [ target
+    .executableTarget(
+      name: "[",
+      dependencies: [
+        "core",
+        .product(name: "ArgumentParser", package: "swift-argument-parser"),
+      ]
+    ),
+    
+    // MARK: head target
     .executableTarget(
       name: "head",
       dependencies: [
