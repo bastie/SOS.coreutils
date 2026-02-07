@@ -1,0 +1,114 @@
+<!--
+SPDX-License-Identifier: 0BSD OR Apache-2.0 OR EUPL-1.2 
+SPDX-FileCopyrightText: © 2026 Sebastian Ritter
+-->
+# TODO: SOS coreutils
+
+## 🏗 Übergreifende Aufgaben
+- [ ] POSIX-Kompatibilitäts-Layer (Darwin/Glibc wrapper), also Kapselung der spezifischen OS Zugriffe in anderes SOS Project
+
+## ⚙️ Werkzeuge
+
+- [ ] `[`
+- [ ] `base32` 
+- [ ] `base64`
+- [ ] `basenc`
+- [ ] `basename`
+- [ ] `cat` 
+- [ ] `chgrp` 
+- [ ] `chmod`
+- [ ] `chown`
+- [ ] `chroot`
+- [ ] `cksum`
+- [ ] `comm`
+- [ ] `cp`
+- [ ] `csplit`
+- [ ] `cut`
+- [ ] `date`
+- [ ] `dd` 
+- [ ] `df` 
+- [ ] `dir`
+- [ ] `dircolors`
+- [ ] `dirname`
+- [ ] `du` 
+- [ ] `echo`
+- [ ] `env`
+- [ ] `expand`
+- [ ] `expr`
+- [ ] `factor`
+- [x] `false`
+- [ ] `fmt`
+- [ ] `fold`
+- [ ] `groups`
+- [x] `head`
+- [ ] `hostid`
+- [ ] `id` 
+- [ ] `install`
+- [ ] `join`
+- [ ] `ln`
+- [ ] `logname`
+- [ ] `ls`
+- [x] `md5`
+- [ ] `mkdir` 
+- [ ] `mkfifo`
+- [ ] `mknod`
+- [ ] `mv`
+- [ ] `nice`
+- [ ] `nl`
+- [ ] `nohup`
+- [ ] `nproc`
+- [ ] `od`
+- [ ] `paste`
+- [ ] `pathchk`
+- [ ] `pinky`
+- [ ] `pr`
+- [ ] `printenv`
+- [ ] `printf`
+- [ ] `ptx`
+- [ ] `pwd`
+- [ ] `readlink`
+- [ ] `realpath`
+- [ ] `rm`
+- [ ] `rmdir`
+- [ ] `runcon`
+- [ ] `seq`
+- [ ] `sha1sum`
+- [ ] `sha224sum`
+- [ ] `sha256sum`
+- [ ] `sha384sum`
+- [ ] `sha512sum`
+- [ ] `shred`
+- [ ] `shuf`
+- [x] `sleep`
+- [ ] `sort`
+- [ ] `split`
+- [ ] `stat`
+- [ ] `stdbuf`
+- [ ] `stty`
+- [ ] `sum`
+- [ ] `sync`
+- [ ] `tee`
+- [ ] `test`
+- [ ] `tac`
+- [ ] `tail`
+- [ ] `touch`
+- [ ] `tr`
+- [ ] `tsort`
+- [ ] `timeout`
+- [x] `true`
+- [ ] `tty`
+- [ ] `uname`
+- [ ] `unexpand`
+- [ ] `uniq`
+- [ ] `unlink` 
+- [ ] `users`
+- [ ] `vdir`
+- [x] `wc`
+- [x] `which`
+- [x] `who`
+- [x] `whoami`
+- [x] `yes`
+
+## 🧪 Testing & Benchmarks
+- [ ] Tests wo nötig 
+- [ ] Performance-Benchmarks (Swift vs. C vs. Rust)

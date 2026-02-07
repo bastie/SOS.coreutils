@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: 0BSD OR Apache-2.0 EUPL-1.2
+// SPDX-License-Identifier: 0BSD OR Apache-2.0 OR EUPL-1.2
 // SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 
 import core
