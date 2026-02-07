@@ -17,6 +17,7 @@ Tools are developed in the separate folders, **but** the business logic must be 
 
 | 🏆 | 🫣 | ⚙️                        | 📝                                   |
 |----|----|-------------------|----------------------------------------------|
+| 🥇 | 😎 | \[                |                                              |
 | 🥇 | 😎 | false             |                                              |
 | 🥇 | 😎 | head              |                                              |
 |    | 🤫 | id                | only intern                                  |
