@@ -6,7 +6,7 @@ SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 
 [![Swift 6.2](https://img.shields.io/badge/Swift-6.2-197595.svg?style=flat-square&logo=swift&logoColor=white)](https://swift.org)
 [![License: 0BSD | Apache 2.0 | EUPL 1.2](https://img.shields.io/badge/License-0BSD%20%7C%20Apache%202.0%20%7C%20EUPL%201.2-197595.svg?style=flat-square)](LICENSE)
-![Status: Progress](https://img.shields.io/badge/Progress-197595?style=flat-square)![Progress](https://geps.dev/progress/2) 
+![Status: Progress](https://img.shields.io/badge/Progress-197595?style=flat-square)![Progress](https://geps.dev/progress/3) 
 ![Status: WIP](https://img.shields.io/badge/Status-Work_in_Progress-197595?style=flat-square)
 
 <p align="center">
