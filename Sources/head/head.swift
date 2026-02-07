@@ -53,7 +53,7 @@ struct head : AsyncParsableCommand {
     // do not use String, because it can be an non UTF-8 conform byte array
     for next in result {
       if next.error {
-        var prg = "\(URL(filePath: CommandLine.arguments[0]).lastPathComponent): ".data(using: .utf8)!
+        let prg = "\(URL(filePath: CommandLine.arguments[0]).lastPathComponent): ".data(using: .utf8)!
         try? FileHandle.standardOutput.write(contentsOf: prg)
         try? FileHandle.standardOutput.write(contentsOf: next.output)
         rc = 1
