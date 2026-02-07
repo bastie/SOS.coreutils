@@ -22,7 +22,6 @@ let package = Package(
     .executable(name: "garoto", targets: ["garoto"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/bastie/SOS.libutil", from: "0.1.0"), //.package(path: "../SOS.libutil"),
     .package(url: "https://github.com/bastie/SOS.libc", from: "0.1.0"),//.package(path: "../SOS.libc"),
     .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.7.0"),
   ],
@@ -35,8 +34,7 @@ let package = Package(
       name: "head",
       dependencies: [
         "core",
-        .product(name: "util", package: "SOS.libutil"),
-        .product(name: "c", package: "SOS.libc")
+        .product(name: "ArgumentParser", package: "swift-argument-parser"),
       ]
     ),
 

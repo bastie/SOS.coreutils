@@ -39,6 +39,7 @@ public struct _wc {
         throw .fileNotFound("Could not stat file.")
       }
       let fileSize = Int(stat.st_size)
+      result.bytes = fileSize
       #else
       // read full file and count bytes
       data = loadFile(path: params.filename)
