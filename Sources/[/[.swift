@@ -1,17 +1,14 @@
+// SPDX-License-Identifier: 0BSD OR Apache-2.0 OR EUPL-1.2
+// SPDX-FileCopyrightText: © 2026 Sebastian Ritter
 
 import core
 import Foundation
 
 @main
-struct `[` {
+struct Bracket {
   public static func main () async {
-    // --- 4. START ---
-    /*
-     var rawArgs = Array(CommandLine.arguments.dropFirst())
-     */
-    // Ganz unten bei der Argument-Verarbeitung:
     var rawArgs = Array(CommandLine.arguments.dropFirst())
-    if rawArgs.first == "[" { rawArgs.removeFirst() } // Falls 'swift run [' das '[' mitliefert
+    if rawArgs.first == "[" { rawArgs.removeFirst() }
     if rawArgs.last == "]" { rawArgs.removeLast() }
     
     var debugMode = false
@@ -19,10 +16,9 @@ struct `[` {
       debugMode = true
       rawArgs.remove(at: idx)
     }
-    if rawArgs.last == "]" { rawArgs.removeLast() }
     
-    let tokens = `_[`.Lexer().tokenize(rawArgs)
-    let parser = `_[`.Parser(tokens: tokens, debug: debugMode)
+    let tokens = _bracket.Lexer().tokenize(rawArgs)
+    let parser = _bracket.Parser(tokens: tokens, debug: debugMode)
     
     do {
       let result = try parser.parseOR()

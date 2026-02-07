@@ -120,7 +120,10 @@ let package = Package(
     // MARK: ☕️
     .executableTarget(name: "garoto" , dependencies: ["core"]),
   
-    .testTarget(name: "coreutilsTests"),
+    .testTarget(
+      name: "coreutilsTests",
+      dependencies: ["core"]
+    ),
   ]
 )
 
